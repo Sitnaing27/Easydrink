@@ -1,0 +1,30 @@
+{
+  "Water": [
+    { "name": "Singha Drinking Water", "price": 700 },
+    { "name": "Crystal Water", "price": 600 },
+    { "name": "Nestlé Pure Life", "price": 700 }
+  ],
+  "Soft Drinks": [
+    { "name": "Coca-Cola", "price": 1500 },
+    { "name": "Pepsi", "price": 1500 },
+    { "name": "Sprite", "price": 1500 },
+    { "name": "Fanta Orange", "price": 1500 }
+  ],
+  "Energy Drinks": [
+    { "name": "M-150", "price": 1200 },
+    { "name": "Carabao Daeng", "price": 1200 },
+    { "name": "Red Bull (Thai)", "price": 1200 }
+  ],
+  "Tea & Coffee": [
+    { "name": "Oishi Green Tea", "price": 2000 },
+    { "name": "Ichitan Green Tea", "price": 2000 },
+    { "name": "Birdy Coffee", "price": 2500 },
+    { "name": "Nescafé Latte", "price": 2500 }
+  ],
+  "Juice & Milk": [
+    { "name": "Tipco Orange Juice", "price": 2500 },
+    { "name": "Malee Juice", "price": 2500 },
+    { "name": "Meiji Milk", "price": 1800 },
+    { "name": "Dutch Mill", "price": 1500 }
+  ]
+}
