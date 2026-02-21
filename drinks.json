@@ -1,30 +1,30 @@
-{
-  "Water": [
-    { "name": "Singha Drinking Water", "price": 700 },
-    { "name": "Crystal Water", "price": 600 },
-    { "name": "Nestlé Pure Life", "price": 700 }
-  ],
-  "Soft Drinks": [
-    { "name": "Coca-Cola", "price": 1500 },
-    { "name": "Pepsi", "price": 1500 },
-    { "name": "Sprite", "price": 1500 },
-    { "name": "Fanta Orange", "price": 1500 }
-  ],
-  "Energy Drinks": [
-    { "name": "M-150", "price": 1200 },
-    { "name": "Carabao Daeng", "price": 1200 },
-    { "name": "Red Bull (Thai)", "price": 1200 }
-  ],
-  "Tea & Coffee": [
-    { "name": "Oishi Green Tea", "price": 2000 },
-    { "name": "Ichitan Green Tea", "price": 2000 },
-    { "name": "Birdy Coffee", "price": 2500 },
-    { "name": "Nescafé Latte", "price": 2500 }
-  ],
-  "Juice & Milk": [
-    { "name": "Tipco Orange Juice", "price": 2500 },
-    { "name": "Malee Juice", "price": 2500 },
-    { "name": "Meiji Milk", "price": 1800 },
-    { "name": "Dutch Mill", "price": 1500 }
-  ]
-}
+[
+  /* Soft Drinks */
+  { "name": "Coca-Cola", "price": 20, "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=300&q=80" },
+  { "name": "Pepsi", "price": 20, "image": "https://images.unsplash.com/photo-1585238342028-4bbc2d9bbf45?w=300&q=80" },
+  { "name": "Sprite", "price": 20, "image": "https://images.unsplash.com/photo-1603052875302-d376b7c0638a?w=300&q=80" },
+
+  /* Water */
+  { "name": "Singha Drinking Water", "price": 10, "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=300&q=80" },
+  { "name": "Crystal Water", "price": 10, "image": "https://images.unsplash.com/photo-1581579182030-2b6026b2f16a?w=300&q=80" },
+  { "name": "Nestlé Pure Life", "price": 15, "image": "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f0b7?w=300&q=80" },
+
+  /* Energy Drinks */
+  { "name": "M-150", "price": 12, "image": "https://images.unsplash.com/photo-1580927752452-216c21afa9b6?w=300&q=80" },
+  { "name": "M-150 Yellow Cap", "price": 12, "image": "https://images.unsplash.com/photo-1587081009213-fca7e1835c3d?w=300&q=80" },
+  { "name": "Carabao Daeng (Red)", "price": 15, "image": "https://images.unsplash.com/photo-1559691820-d0e6db848fed?w=300&q=80" },
+  { "name": "Carabao Green", "price": 15, "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=300&q=80" },
+  { "name": "Lipo 6", "price": 18, "image": "https://images.unsplash.com/photo-1603052875302-d376b7c0638a?w=300&q=80" },
+  { "name": "Red Bull (Thai)", "price": 15, "image": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=300&q=80" },
+
+  /* Tea & Coffee */
+  { "name": "Oishi Green Tea", "price": 18, "image": "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=300&q=80" },
+  { "name": "Ichitan Green Tea", "price": 18, "image": "https://images.unsplash.com/photo-1576765607925-3d7a3ba29149?w=300&q=80" },
+  { "name": "Birdy Coffee", "price": 22, "image": "https://images.unsplash.com/photo-1562771249-2106e2d351c1?w=300&q=80" },
+  { "name": "Nescafé Latte", "price": 22, "image": "https://images.unsplash.com/photo-1527169402691-a3fbad17c4c9?w=300&q=80" },
+
+  /* Juice & Milk */
+  { "name": "Tipco Orange Juice", "price": 25, "image": "https://images.unsplash.com/photo-1590086782798-62d8eaa30f32?w=300&q=80" },
+  { "name": "Malee Fruit Juice", "price": 25, "image": "https://images.unsplash.com/photo-1595433562696-2c691fbedbfb?w=300&q=80" },
+  { "name": "Meiji Fresh Milk", "price": 20, "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=300&q=80" }
+]
