@@ -141,23 +141,26 @@ body {
 </div>
 
 <script>
-function showMenu() {
-  document.getElementById("welcome-screen").style.display = "none";
-  document.getElementById("menu-screen").style.display = "block";
-}
+fetch("drinks.json")
+  .then(res => res.json())
+  .then(drinks => {
+    const container = document.querySelector(".drinks-container");
+    container.innerHTML = "";
 
-function orderDrink(name, price) {
-  const message =
-    "Order from Website\n\n" +
-    "Drink: " + name + "\n" +
-    "Price: " + price + " ฿";
-
-  const messenger =
-    "https://m.me/alexander.sn.988?text=" +
-    encodeURIComponent(message);
-
-  window.open(messenger, "_blank");
-}
+    drinks.forEach(d => {
+      container.innerHTML += `
+        <div class="drink-card">
+          <img src="${d.image}">
+          <h3>${d.name}</h3>
+          <p>${d.price} ฿</p>
+          <button class="btn-buy"
+            onclick="orderDrink('${d.name}', ${d.price})">
+            Buy
+          </button>
+        </div>
+      `;
+    });
+  });
 </script>
 
 </body>
