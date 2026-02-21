@@ -1,134 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easy Drink Order</title>
+
 <style>
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: #f4f4f9;
+  background-color: #f4f4f9;
+  text-align: center;
 }
-#welcome {
+
+/* Welcome Screen */
+#welcome-screen {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #2c3e50;
+  background-color: #2c3e50;
   color: white;
-  text-align: center;
 }
-#welcome button {
-  padding: 14px 30px;
-  font-size: 18px;
-  background: #e74c3c;
+
+#welcome-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.btn-start {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  background-color: #e74c3c;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
 }
-#menu {
+
+/* Menu Screen */
+#menu-screen {
   display: none;
   padding: 20px;
 }
-.category {
+
+.menu-title {
+  font-size: 2.5rem;
   margin-bottom: 30px;
 }
-.category h2 {
-  color: #2c3e50;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-}
-.item {
-  background: white;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
+
+.drinks-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
-.item:hover {
-  background: #eef3ff;
+
+.drink-card {
+  background-color: white;
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
 }
-.price {
+
+.drink-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.drink-card h3 {
+  margin: 10px 0 5px;
+}
+
+.drink-card p {
   color: #27ae60;
   font-weight: bold;
+  font-size: 1.2rem;
 }
-.note {
-  font-size: 12px;
-  color: #777;
-  margin-top: 20px;
+
+.btn-buy {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 </style>
 </head>
+
 <body>
 
-<div id="welcome">
-  <h1>Welcome</h1>
-  <p>Tap start to order drinks</p>
-  <button onclick="startOrder()">Start Order</button>
+<!-- Welcome -->
+<div id="welcome-screen">
+  <h1>Welcome Sir</h1>
+  <button class="btn-start" onclick="showMenu()">Start Order</button>
 </div>
 
-<div id="menu"></div>
+<!-- Menu -->
+<div id="menu-screen">
+  <h2 class="menu-title">7-Eleven Drinks (TH)</h2>
+
+  <div class="drinks-container">
+
+    <div class="drink-card">
+      <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=300&q=80">
+      <h3>Coca-Cola</h3>
+      <p>20 ฿</p>
+      <button class="btn-buy" onclick="orderDrink('Coca-Cola', 20)">Buy</button>
+    </div>
+
+    <div class="drink-card">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300&q=80">
+      <h3>Iced Coffee</h3>
+      <p>30 ฿</p>
+      <button class="btn-buy" onclick="orderDrink('Iced Coffee', 30)">Buy</button>
+    </div>
+
+    <div class="drink-card">
+      <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=300&q=80">
+      <h3>Orange Juice</h3>
+      <p>25 ฿</p>
+      <button class="btn-buy" onclick="orderDrink('Orange Juice', 25)">Buy</button>
+    </div>
+
+    <div class="drink-card">
+      <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&q=80">
+      <h3>Bubble Tea</h3>
+      <p>35 ฿</p>
+      <button class="btn-buy" onclick="orderDrink('Bubble Tea', 35)">Buy</button>
+    </div>
+
+  </div>
+</div>
 
 <script>
-const MESSENGER_USERNAME = "alexander.sn.988";
-
-function startOrder() {
-  document.getElementById("welcome").style.display = "none";
-  document.getElementById("menu").style.display = "block";
-
-  fetch("drinks.json")
-    .then(res => res.json())
-    .then(data => renderMenu(data))
-    .catch(() => {
-      document.getElementById("menu").innerHTML =
-        "<p>Failed to load menu.</p>";
-    });
+function showMenu() {
+  document.getElementById("welcome-screen").style.display = "none";
+  document.getElementById("menu-screen").style.display = "block";
 }
 
-function renderMenu(data) {
-  const menu = document.getElementById("menu");
+function orderDrink(name, price) {
+  const message =
+    "Order from Website\n\n" +
+    "Drink: " + name + "\n" +
+    "Price: " + price + " ฿";
 
-  for (const category in data) {
-    const section = document.createElement("div");
-    section.className = "category";
-    section.innerHTML = `<h2>${category}</h2>`;
-
-    data[category].forEach(drink => {
-      const item = document.createElement("div");
-      item.className = "item";
-      item.innerHTML = `
-        <span>${drink.name}</span>
-        <span class="price">${drink.price} MMK</span>
-      `;
-      item.onclick = () => orderToMessenger(drink.name, drink.price);
-      section.appendChild(item);
-    });
-
-    menu.appendChild(section);
-  }
-
-  const note = document.createElement("div");
-  note.className = "note";
-  note.innerText =
-    "Note: Selecting a drink will open Messenger with a ready message. Tap Send to confirm your order.";
-  menu.appendChild(note);
-}
-
-function orderToMessenger(drinkName, price) {
-  const message = `မင်္ဂလာပါ၊ ${drinkName} (${price} MMK) ကို မှာချင်ပါတယ်။`;
-  const url =
-    "https://m.me/" +
-    MESSENGER_USERNAME +
-    "?text=" +
+  const messenger =
+    "https://m.me/alexander.sn.988?text=" +
     encodeURIComponent(message);
 
-  window.open(url, "_blank");
+  window.open(messenger, "_blank");
 }
 </script>
 
